@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Comments</title>
 </head>
 <body>
-    <h1>comments</h1>
+    <h1>Comments</h1>
     <ul>
-    <% for(let {id, username, comment} of comments){ %>
-        <li><%=comment%> - <a href="/comments/<%=id%>"><%=username%></a></li>
+    <% for (let {id, username, comment} of comments) { %>
+        <li><%= comment %> - <a href = '/comments/<%= id %>'><%= username %></a></li>
     <% } %>
     </ul>
+
+    <h2><a href="/comments/new">New Comment</a></h2>
 </body>
 </html>

@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="comment.css">
+    <title>Comment</title>
 </head>
 <body>
-    <h1><%= username %></h1>
+    <h1>comment id : <%= id %> by <%= username %></h1>
     <p><%= comment %></p>
-    <h2><a href = "/comments">Back to all comments</a></h2>
+    <span><a href = "/comments/<%= id %>/edit">Edit</a></span>
+    <form method="POST" action="/comments/<%= id %>?_method=DELETE">
+        <button>Delete</button>
+    </form>
 </body>
 </html>
