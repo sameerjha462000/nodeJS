@@ -1,6 +1,11 @@
 /*
     C -- Create
 
+    -- We have insertOne(), insertMany() methods. As the name suggest insertOne() is used to insert a single document into the
+       collection whereas insertMany() expects us to pass in an array of documents to be inserted into the collection.
+
+    -- The insert() method can be used to insert either a single document into the collection or multiple documents into the collection.
+
     1. db.dogs.insertOne( // used to insert a single document into the collection.
                             {
                                 name : "Charlie",

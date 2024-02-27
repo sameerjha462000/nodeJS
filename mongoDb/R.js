@@ -1,6 +1,10 @@
 /*
 
     R -- stands for Read
+
+    -- The findOne() method returns us a single document if it gets one.
+    -- The find() method returns us a cursor to the result as this operation is a bit expensive.
+
     1. db.dogs.find() // finds all the documents inside the dogs.
 
     2. db.dogs.find({breed : "Corgi"}) // returns us all the dogs which have the "Corgi" breed.
@@ -18,3 +22,7 @@
     2. db.dogs.findOne({breed : "Corgi"}) //  returns us the first corgi dog.
 
 */
+
+
+
+
