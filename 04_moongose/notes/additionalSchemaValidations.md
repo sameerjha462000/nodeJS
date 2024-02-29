@@ -56,7 +56,6 @@ For example, on strings we can set `lowercase` to  `true`. This would automatica
 We can also mention arrays and objects inside our schema.
 
 ```Javascript
-
     const productSchema = new mongoose.Schema({
         name : {
             type : String,
@@ -106,7 +105,6 @@ We can also mention the validation error when the validation fails.
 We can also mention something to be an Enum(only selected types available)
 
 ```Javascript
-
     const productSchema = new mongoose.Schema({
         name : {
             type : String,
@@ -120,8 +118,8 @@ We can also mention something to be an Enum(only selected types available)
             type : Boolean,
             default : false
         },
-        categories : [String], //  This means that categories is an array of Strings
-        qty : { // "qty" is an object with two keys : "online" and "inStore"
+        categories : [String],
+        qty : {
             online : {
                 type : Number, 
                 default : 0
@@ -133,7 +131,7 @@ We can also mention something to be an Enum(only selected types available)
         },
         size : {
             type : String,
-            enum : ["S", "M", "L"]
+            enum : ["S", "M", "L"] // enum
         }
     })
 ```
