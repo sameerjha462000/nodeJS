@@ -1,6 +1,7 @@
 # Schema Validations
 
-1. We can apply validations to the fields of our schema.
+We can apply validations to the fields of our schema.
+
     ```Javascript
         const mongoose = require('mongoose')
 
@@ -37,7 +38,8 @@
             }) 
     ```
 
-2. If we do not pass the validation then we will get the validation error.
+If we do not pass the validation then we will get the validation error.
+
     ```Javascript
         const bike = new Product({price : 599})
 
@@ -51,7 +53,8 @@
             })
     ```
 
-3. If we pass a string into the Number field, it tries to cast it into the integer.
+If we pass a string into the Number field, it tries to cast it into the integer.
+
     ```Javascript
         const bike = new Product({name : "Mountain Bike", price : "599"}) // "599" will be converted into 599
 

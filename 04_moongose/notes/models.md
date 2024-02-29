@@ -1,6 +1,7 @@
-1. Models are javascript classes that we make with assistance of mongoose which are used to interact with the mongoDb collection.
+# Models
 
-2. Understand the below code ...
+Models are javascript classes that we make with assistance of mongoose which are used to interact with the mongoDb collection. Before creating the Model we first need to define the schema which is done using the `mongoose.Schema()` constructor.
+
     ```JavaScript
         const mongoose = require('mongoose')
 
@@ -18,7 +19,9 @@
         rating : String
         })
     ```
-3. Creating a schema is just the JS side of the equation, it has nothing to do with models at this point of time.
+Creating a schema is just the JS side of the equation, it has nothing to do with models at this point of time. We then need to pass in that schema and the name of the collection into the `mongoose.Model()` method which would then return us a Model to interact with Mongo Database.
+
+#### Look at this code snippet
 
     ```Javascript
 
@@ -39,16 +42,19 @@
         })
     ```
 
-4. We can also update the movie in the database using the same 
+Now in order to update a Movie, we just need to make changes in the model of that movie and then call the .save() method on that.
+
     ```JavaScript
         amadeus.year = 1986
 
         amadeus.save() // This will update the year to 1986
     ```
+    
 
 ## Insertion
 
-5. We can also add multiple movies at the same time.
+We can also add multiple movies at the same time.
+
     ```JavaScript
         Movie.insertMany(
             {title : "Amelie", year : 2001, score : 8.3, rating : "R"},
@@ -65,8 +71,8 @@
 
 ## Reading/Finding
 
-6. Finding with mongoose
-    Finding takes time, so it is a time taking operation. They do not return a promise as they are not fully-fledged promises. Although they are thenable.
+Finding with mongoose takes time as it is a time taking operation. They do not return a promise as they are not fully-fledged promises. Although they are thenable.
+
     ```Javascript
         Movie.find({}).then(data => {console.log(data)})
 
@@ -83,7 +89,8 @@
 
 ## Updating
 
-7. Updating with mongoose
+Updating with mongoose
+
     ```Javascript
         Movie.updateOne({title : "Amadeus"}, {year : 1984})
                 .then(res => console.log(res)) // does not give us the updated movie, instead it gives us a weird object
@@ -93,7 +100,8 @@
                 .then(res => console.log(res)) // again a weird object 
     ```
 
-8. We also have other update methods which actually return the updated object which we can get by using .then() method. Although, technically it is not a promise but still it is a thenable.
+We also have other update methods which actually return the updated object which we can get by using .then() method. Although, technically it is not a promise but still it is a thenable.
+
     ```Javascript
         Movie.findOneAndUpdate({title : "Amadeus"}, {year : 1986})
         .then(m => console.log(m)) // returns the object before updation
@@ -106,7 +114,7 @@
 
 ## Deletion
 
-9. We also have findOneAndDelete() method.
+We also have findOneAndDelete() method.
 
     ```JavaScript
         Movie.remove({title : "Amelie"}) // returns us a weird object
