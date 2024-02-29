@@ -22,7 +22,7 @@
 
     ```Javascript
 
-        const Movie = mongoose.Model("Movie", movieSchema) /
+        const Movie = mongoose.Model("Movie", movieSchema)
         // Mongoose would pluralize this "Movie" into 'movies' collection which is in the Mongo database.
 
         const amadeus = new Movie({title : "Amadeus", year : 1984, score : 9.2, rating : "R"})
@@ -37,4 +37,11 @@
             console.log("could not save to the database")
             console.log(err.message)
         })
+    ```
+
+4. We can also update the movie in the database using the same 
+    ```JavaScript
+        amadeus.year = 1986
+
+        amadeus.save()
     ```
