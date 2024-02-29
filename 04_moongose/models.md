@@ -77,8 +77,27 @@
         Movie.fingById("5f3e0c2d838e3725b55202c7").then(m => console.log(m))
     ```
 
+7. Updating with mongoose
+    ```Javascript
+        Movie.updateOne({title : "Amadeus"}, {year : 1984})
+                .then(res => console.log(res)) // does not give us the updated movie, instead it gives us a weird object
+
+        
+        Movie.updateMany({title : {$in : ["Amadeus", "Stand By Me"]}}, {score: 10})
+                .then(res => console.log(res)) // again a weird object 
+    ```
+
+8. We also have other update methods which actually return the updated object which we can get by using .then() method. Although, technically it is not a promise but still it is a thenable.
+    ```Javascript
+        Movie.findOneAndUpdate({title : "Amadeus"}, {year : 1986})
+        .then(m => console.log(m)) // returns the object before updation
+
+        // To get the updated object, we need to pass in the options object as the 3rd argument.
+        Movie.findOneAndUpdate({title : "Amadeus"}, {year : 1996}, {new : true})
+        .then(m => console.log(m)) //  returns us the updated object
+        // Now the deprecation warning would have gone
+    ```
 
 
 
 
-    
