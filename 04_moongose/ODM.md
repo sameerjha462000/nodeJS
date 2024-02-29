@@ -6,11 +6,18 @@
 
 4. For SQL databases, we use the term ORM(Object Relational Mapper).
 
-5. How to make a mongoose connection?
-    -- First we install mongoose
-        npm install mongoose
-    
-    --  const mongoose = require('mongoose')
-        mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser : true. unifiedToplogy : true})
-    
-    -- unifiedTopology must be set to true otherwise it would give deprecation warning.
+5. Installing mongoose => `npm install mongoose`
+
+6. Making a connection
+    ```JavaScript
+        const mongoose = require('mongoose')
+
+        mongoose.connect("mongodb://localhost:27017/test",
+                            {
+                                useNewUrlParser : true,
+                                unifiedToplogy : true // unified topology must be set to true otherwise we would get deprecation warning.
+                            }
+                        )
+    ```
+
+7. 
