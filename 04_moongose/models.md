@@ -43,5 +43,42 @@
     ```JavaScript
         amadeus.year = 1986
 
-        amadeus.save()
+        amadeus.save() // This will update the year to 1986
     ```
+
+5. We can also add multiple movies at the same time.
+    ```JavaScript
+        Movie.insertMany(
+            {title : "Amelie", year : 2001, score : 8.3, rating : "R"},
+            {title : "Alien", year : 1979, score : 8.1, rating : "R"},
+            {title : "The Iron Giant", year : 1999, score : 7.5, rating : "PG"},
+            {title : "Stand By Me", year : 1986, score : 8.6, rating : "R"},
+            {title : "Moonrise Kingdom", year : 2012, score : 7.3, rating : "PG-13"},
+        )
+        .then(data => {
+            console.log("It worked!!!")
+            console.log(data)
+        }) 
+    ```
+
+6. Finding with mongoose
+    Finding takes time, so it is a time taking operation. They do not return a promise as they are not fully-fledged promises. Although they are thenable.
+    ```Javascript
+        Movie.find({}).then(data => {console.log(data)})
+
+        Movie.find({rating : "PG-13"}).then(data => console.log(data))
+
+        Movie.find({year : {$gt : 2015}}).then(data => console.log(data))
+
+        Movie.find({year : {$lt : 2010}})
+
+        Movie.findOne({}).then(m => console.log(m))
+
+        Movie.fingById("5f3e0c2d838e3725b55202c7").then(m => console.log(m))
+    ```
+
+
+
+
+
+    
