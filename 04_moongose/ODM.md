@@ -20,7 +20,7 @@
                         )
     ```
 
-7. It may happen sometime that we would not be able to make a connection. Then we can also make a catch statement as `mongoose.connect()` returns us a promise.
+7. It may happen sometimes that we would not be able to make a connection. Then we can also make a catch statement as `mongoose.connect()` returns us a promise.
     ```JavaScript
         mongoose.connect("mongodb://localhost:27017/test",
                             {
