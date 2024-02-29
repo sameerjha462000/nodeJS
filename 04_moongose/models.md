@@ -95,7 +95,7 @@
         // To get the updated object, we need to pass in the options object as the 3rd argument.
         Movie.findOneAndUpdate({title : "Amadeus"}, {year : 1996}, {new : true})
         .then(m => console.log(m)) //  returns us the updated object
-        // Now the deprecation warning would have gone
+        // Now the deprecation warning is gone
     ```
 
 
