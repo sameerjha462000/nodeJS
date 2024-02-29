@@ -20,4 +20,19 @@
                         )
     ```
 
-7. 
+7. It may happen sometime that we would not be able to make a connection. Then we can also make a catch statement as `mongoose.connect()` returns us a promise.
+    ```JavaScript
+        mongoose.connect("mongodb://localhost:27017/test",
+                            {
+                                useNewUrlParser : true,
+                                unifiedToplogy : true // unified topology must be set to true otherwise we would get deprecation warning.
+                            }
+                        )
+                        .then(() => {
+                            console.log("Connected successfully")
+                        })
+                        .catch((err) => {
+                            console.log('OH NO connection failed....')
+                            console.log(err.message)
+                        })
+    ```
