@@ -46,6 +46,8 @@
         amadeus.save() // This will update the year to 1986
     ```
 
+## Insertion
+
 5. We can also add multiple movies at the same time.
     ```JavaScript
         Movie.insertMany(
@@ -60,6 +62,8 @@
             console.log(data)
         }) 
     ```
+
+## Reading/Finding
 
 6. Finding with mongoose
     Finding takes time, so it is a time taking operation. They do not return a promise as they are not fully-fledged promises. Although they are thenable.
@@ -76,6 +80,8 @@
 
         Movie.fingById("5f3e0c2d838e3725b55202c7").then(m => console.log(m))
     ```
+
+## Updating
 
 7. Updating with mongoose
     ```Javascript
@@ -96,6 +102,23 @@
         Movie.findOneAndUpdate({title : "Amadeus"}, {year : 1996}, {new : true})
         .then(m => console.log(m)) //  returns us the updated object
         // Now the deprecation warning is gone
+    ```
+
+## Deletion
+
+9. We also have findOneAndDelete() method.
+
+    ```JavaScript
+        Movie.remove({title : "Amelie"}) // returns us a weird object
+
+        Movie.deleteMany({year : {$gt : 1999}}) // returns us a weird object
+
+        // If we want to get the deleted item, we use findOneAndDelete() methods.
+        Movie.findOneAndDelete({title : "Alien"})
+            .then(m => console.log(m)) // returns us the deleted movie
+
+        Movie.findByIdAndDelete("5f3e0c2d838e3725b55202c7")
+            .then(m => console.log(m))
     ```
 
 
