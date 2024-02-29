@@ -64,7 +64,7 @@
                 console.log("OH NO ERROR!")
             })
 
-        const bike2 = new Product({name : "Greenfield Bike", price : "Hundred"}) // This will not work as mongoose would not be able to typecast "Hundred" into a Number.
+        const bike2 = new Product({name : "Greenfield Bike", price : "Hundred"}) // This will not work as mongoose would not be able to typecast "Hundred" into a 
 
         bike2.save()
             .then(data => {
