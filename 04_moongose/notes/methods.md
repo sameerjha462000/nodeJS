@@ -1,6 +1,6 @@
 # Methods on Models
 
-We can add methods on models, we can have instance methods as well as static methods. Instance methods are the which are available to the each individual instance of the Model. Static methods are class level methods i.e. they are applicable on the class.
+We can add methods on models, we can have instance methods as well as static methods. Instance methods are the one which are available to each individual instance of the Model. Static methods are class level methods i.e. they are applicable on the class.
 
 Let us first create a person schema
 
@@ -31,7 +31,7 @@ We can define our instance methods by adding the name of the method in the `pers
 
     PersonSchema.methods.age = function () {
         const { dob } = this;
-        return `My age is ${2024-age}` // since ye 2024 chl rha he
+        return `My age is ${2024 - dob}` // since ye 2024 chl rha he
     }
 
     // Schema should be connected to the Model after all the instance and static methods have been defined.
