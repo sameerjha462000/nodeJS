@@ -84,3 +84,16 @@ We can also add our own data or modify the existing data during the execution of
 ```
 
 In this we can see that we added our own data `firstName` and `secondName` during the execution of first and the second middleware respectively and then used this data to render our view.
+
+# Changing the request type of all request to GET
+
+We can change the request type of each and every request that comes on our server to a GET request by making a middleware for this.
+
+```Javascript
+    app.use((req, res, next) => {
+        req.method = "GET";
+        next();
+    })
+```
+
+This middlewares changes all the incoming request into a GET request no matter what was the request method initially. So all the POST, PUT, PATCH, and DELETE handlers are wasted...
