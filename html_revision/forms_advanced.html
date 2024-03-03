@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Advanced</title>
+</head>
+<body>
+    <form action="#" method="get">
+        <div>
+            <label for="comment">Leave a comment pls!!!</label><br>
+            <textarea name="feedback" id="comment" cols="30" rows="10" required>Bulah Bulah Bulah</textarea>
+        </div>
+        <div>
+            <!-- required ==> it is mandatory to sell the soul -->
+            <!-- checked ==> by default it would be ticked -->
+            <!-- when we check the box, the value which we receive on the backend is "on" -->
+            <label for="sell_your_soul">Do you agree to sell your soul?</label>
+            <input type="checkbox" name="terms_conditions" id="sell_your_soul" required checked/>
+        </div>
+        <button>Submit the feedback</button>
+    </form>
+</body>
+</html>
