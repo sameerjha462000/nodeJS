@@ -1,34 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Radio Buttons</title>
-  </head>
-  <body>
+<!-- 
+  1. In order to connect various radio buttons to the same question we give them the same name. For example in this 
+    case we gave them all the name="fav-subject" 
+  
+  2. Also, if we want that user selects atleast 1 radio button, then we need to mark a radio button checked
 
-    <!-- In order to connect various radio buttons to the same question we give them the same name. For example in this 
-    case we gave them all the name="fav-subject" -->
-
-    <!-- Also, if we want that user selects atleast 1 radio button, then we need to mark a radio button checked -->
-
-    <!-- Also, when we submit a radio button form, it reads the value as "on". Due to this reason we need to give radio buttons
-    a value so that when we receive them on the backend we get a value other than "on" -->
-    <form action="">
-      <p>Which is your favourite subject</p>
-      <div>
-        <input type="radio" name="fav-subject" id="chem" value="c" checked/>
-        <label for="chem">Chemistry</label>
-      </div>
-      <div>
-        <input type="radio" name="fav-subject" id="math" value="m"/>
-        <label for="math">Mathematics</label>
-      </div>
-      <div>
-        <input type="radio" name="fav-subject" id="phy" value="p"/>
-        <label for="phy">Physics</label>
-      </div>
-      <button>Submit</button>
-    </form>
-  </body>
-</html>
+  3. Also, when we submit a radio button form, it reads the value as "on". Due to this reason we need to give radio buttons
+    a value so that when we receive them on the backend we get a value other than "on" 
+-->
+<form action="">
+  <p>Which is your favourite subject</p>
+  <div>
+    <input type="radio" name="fav-subject" id="chem" value="c" checked />
+    <label for="chem">Chemistry</label>
+  </div>
+  <div>
+    <input type="radio" name="fav-subject" id="math" value="m" />
+    <label for="math">Mathematics</label>
+  </div>
+  <div>
+    <input type="radio" name="fav-subject" id="phy" value="p" />
+    <label for="phy">Physics</label>
+  </div>
+  <button>Submit</button>
+</form>

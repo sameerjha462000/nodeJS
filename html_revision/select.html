@@ -1,24 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select</title>
-</head>
-<body>
-    <!-- If we don't provide value inside the option tag, then the browser automatically sends the value between the option 
-    tags to the backend (which we do not want to happen 😑)-->
-    <form action="">
-        <div>
-            <label for="subject">Select the subject</label>
-            <select name="sub" id="subject">
-                <option value="eng">English</option>
-                <option value="math" selected>Mathematics</option>
-                <option value="phy">Physics</option>
-                <option value="chem">Chemistry</option>
-            </select>
-        </div>
-        <button>Submit</button>
-    </form>
-</body>
-</html>
+<!-- 
+    If we don't provide value inside the option tag, then the browser automatically sends the value between the option 
+    tags to the backend (which we do not want to happen 😑)
+-->
+<form action="">
+  <div>
+    <label for="subject">Select the subject</label>
+    <select name="sub" id="subject">
+      <option value="eng">English</option>
+      <option value="math" selected>Mathematics</option>
+      <option value="phy">Physics</option>
+      <option value="chem">Chemistry</option>
+    </select>
+  </div>
+  <button>Submit</button>
+</form>
