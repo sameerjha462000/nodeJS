@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="get">
+        <div>
+            <label for="username">Enter the name</label>
+            <input type="text" placeholder="Enter the name" id="username" name="name" required>
+        </div>
+        <div>
+            <label for="useremail">Enter the email</label>
+            <input type="email" name="email" id="useremail" placeholder="Enter the email" required>
+        </div>
+        <div>
+            <label for="userpassword">Enter the password</label>
+            <input type="password" name="pass" id="userpassword" placeholder="password please" required>
+        </div>
+        <div>
+            <label for="userage">Enter the age</label>
+            <input type="number" id="userage" name="age" placeholder="0" required min="0" max="28">
+        </div>
+        <div>
+            <label for="userwebsite">Enter the url for your website</label>
+            <input type="url" name="website" id="userwebsite" placeholder="Enter the url 😉" required>
+        </div>
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+        <!-- If we do not specify the type, then also the default value of type for a button inside a form is submit. -->
+    </form>
+    <!-- This is also submit type -->
+    <button>Button outside the form</button>
+    <button type="button">I am just a button</button>
+</body>
+</html>
